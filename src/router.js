@@ -30,7 +30,25 @@ const Others = () =>
   import(/* webpackChunkName: 'others' */ './components/user/Others.vue')
 
 const User = () =>
-  import(/* webpackChunkName: 'others' */ './views/User.vue')
+  import(/* webpackChunkName: 'user' */ './views/User.vue')
+
+const MyInfo = () =>
+  import(/* webpackChunkName: 'info' */ './components/user/common/Myinfo.vue')
+
+const Accounts = () =>
+  import(/* webpackChunkName: 'accounts' */ './components/user/common/Accounts.vue')
+
+const Passwd = () =>
+  import(/* webpackChunkName: 'password' */ './components/user/common/Password.vue')
+
+const PicUpload = () =>
+  import(/* webpackChunkName: 'picupload' */ './components/user/common/PicUpload.vue')
+
+const MyPost = () =>
+  import(/* webpackChunkName: 'mypost' */ './components/user/common/MyPost.vue')
+
+const MyCollection = () =>
+  import(/* webpackChunkName: 'mycollection' */ './components/user/common/MyCollection.vue')
 Vue.use(Router)
 
 export default new Router({
@@ -92,12 +110,47 @@ export default new Router({
         {
           path: 'set',
           name: 'set',
-          component: Settings
+          component: Settings,
+          children: [
+            {
+              path: '',
+              name: 'info',
+              component: MyInfo
+            },
+            {
+              path: 'account',
+              name: 'account',
+              component: Accounts
+            },
+            {
+              path: 'passwd',
+              name: 'passwd',
+              component: Passwd
+            },
+            {
+              path: 'picupload',
+              name: 'picupload',
+              component: PicUpload
+            }
+
+          ]
         },
         {
           path: 'posts',
           name: 'posts',
-          component: Posts
+          component: Posts,
+          children: [
+            {
+              path: '',
+              name: 'mypost',
+              component: MyPost
+            },
+            {
+              path: 'mycollection',
+              name: 'mycollection',
+              component: MyCollection
+            }
+          ]
         },
         {
           path: 'msg',

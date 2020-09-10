@@ -25,4 +25,25 @@ export default {
   position: relative;
   top: -4px;
 }
+.pr0 {
+  padding-right: 0px;
+}
+.pd20 {
+  padding: 20px;
+}
+.mt20 {
+  margin-top: -20px;
+}
+.pl0 {
+  padding-left: 0px;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
 </style>

@@ -1,6 +1,26 @@
 <template>
   <div>
-
+    <div class="fly-panel fly-panel-user panel" pad20>
+      <div class="layui-tab layui-tab-brief" lay-filter="user">
+        <ul class="layui-tab-title" id="LAY_mine">
+          <li>
+            <router-link :to="{name: 'info'}">我的资料</router-link>
+          </li>
+          <li>
+            <router-link :to="{name: 'picupload'}">头像</router-link>
+          </li>
+          <li>
+            <router-link :to="{name: 'passwd'}">密码</router-link>
+          </li>
+          <li>
+            <router-link :to="{name: 'account'}">帐号绑定</router-link>
+          </li>
+        </ul>
+        <div class="layui-tab-content" style="padding: 20px 0;">
+          <router-view></router-view>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -11,5 +31,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.panel {
+  margin: 0 0 10px 225px;
+}
 </style>
